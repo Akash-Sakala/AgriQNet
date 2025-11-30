@@ -1,0 +1,236 @@
+import { Language } from '../types';
+
+export const LANGUAGES: Record<Language, string> = {
+  en: 'English',
+  hi: 'हिंदी (Hindi)',
+  kn: 'ಕನ್ನಡ (Kannada)',
+  te: 'తెలుగు (Telugu)',
+};
+
+export const TRANSLATIONS: Record<Language, any> = {
+  en: {
+    // Nav
+    dashboard: "Dashboard",
+    weatherStation: "Weather Station",
+    cropAdvisor: "Crop Advisor",
+    fertilizers: "Fertilizers",
+    pestControl: "Pest Control",
+    pestAlerts: "Pest Alerts",
+    chat: "Agri Chat",
+    
+    // Auth
+    welcomeAgri: "Welcome to AgriQNet",
+    authDesc: "Your intelligent companion for modern, sustainable farming.",
+    login: "Login",
+    signup: "Sign Up",
+    phone: "Phone Number",
+    password: "Password",
+    fullName: "Full Name",
+    location: "Location",
+    newFarmer: "New Farmer? Create Account",
+    haveAccount: "Already have an account? Login",
+    sendOtp: "Send OTP",
+    verifyRegister: "Verify & Register",
+    enterOtp: "Enter Verification Code",
+    otpSent: "We sent a 6-digit code to",
+    userExists: "User already exists with this phone number.",
+    invalidOtp: "Invalid OTP. Please try again.",
+
+    // Dashboard
+    welcome: "Welcome back,",
+    farmer: "Farmer",
+    yieldPred: "Yield Prediction",
+    fieldReport: "Field Report",
+    totalYield: "Total Yield",
+    activeFields: "Active Fields",
+    equipStatus: "Equipment Status",
+    waterUsage: "Water Usage",
+    yieldProj: "Yield Projections",
+    soilMoisture: "Soil Moisture",
+
+    // Weather
+    searchCity: "Search City...",
+    humidity: "Humidity",
+    wind: "Wind",
+    uvIndex: "UV Index",
+    forecast: "7-Day Forecast",
+    
+    // Crop Advisor
+    aiModel: "GenAI Advisor",
+    precisionModel: "Precision Model (ML)",
+    soilData: "Soil & Farm Data",
+    genAiDesc: "Describe your farm for AI-powered recommendations",
+    precisionDesc: "Enter exact NPK values for ML prediction",
+    nitrogen: "Nitrogen (N)",
+    phosphorus: "Phosphorus (P)",
+    potassium: "Potassium (K)",
+    temperature: "Temperature (°C)",
+    phLevel: "pH Level",
+    rainfall: "Rainfall (mm)",
+    farmLocation: "Farm Location",
+    soilType: "Soil Type",
+    waterSource: "Water Source",
+    fieldSize: "Field Size",
+    analyzing: "Analyzing...",
+    predict: "Predict Crop",
+    analyze: "Analyze Farm",
+    predictionResult: "Prediction Result",
+    confidence: "Confidence",
+    noCrops: "No recommendations yet. Fill the form to get started.",
+    clickAnalysis: "Click for Detailed Analysis",
+    soilRed: "Red Soil",
+    soilBlack: "Black Soil",
+    soilAlluvial: "Alluvial Soil",
+    soilClay: "Clay Soil",
+    soilSandy: "Sandy Soil",
+    waterRain: "Rainfed",
+    waterBore: "Borewell",
+    waterCanal: "Canal Irrigation",
+    waterRiver: "River",
+    growthTime: "Growth Time",
+    yield: "Yield",
+    economy: "Economy",
+    analysis: "Analysis",
+    requirements: "Requirements",
+    waterNeeds: "Water",
+    sunlight: "Sunlight",
+    soilPref: "Soil Preference",
+
+    // Fertilizer
+    fertilizerPrecision: "Precision Fertilizer",
+    fertilizerPrecisionDesc: "ML-based nutrient optimization",
+    calcTitle: "Fertilizer Calculator",
+    calcDesc: "Get tailored fertilizer plans",
+    targetCrop: "Target Crop",
+    soilCond: "Soil Condition",
+    loamy: "Loamy",
+    clay: "Clay",
+    sandy: "Sandy",
+    silt: "Silt",
+    peaty: "Peaty",
+    predictFert: "Predict Fertilizer",
+    genPlan: "Generate Plan",
+    appFreq: "Application Frequency",
+    dosage: "Dosage",
+    warnings: "Warnings",
+
+    // Pest Control
+    pestTitle: "Pest Diagnosis",
+    pestDesc: "Upload a photo of the affected plant for instant analysis.",
+    changePhoto: "Change Photo",
+    upload: "Click to Upload Image",
+    analyzingPest: "Analyzing Pest...",
+    diagnose: "Diagnose Issue",
+    risk: "Risk",
+    treatments: "Treatments",
+    prevention: "Prevention",
+
+    // Pest Alerts
+    pestAlertsTitle: "Real-time Pest Outbreak Alerts",
+    pestAlertsDesc: "Live monitoring system for pest outbreaks in your region.",
+    launchPestAlerts: "Open Monitoring Dashboard",
+    loadingPestAlerts: "Connecting to Alert System...",
+    localServerTitle: "Local Server Connection",
+    localServerDesc: "The monitoring dashboard is hosted on a local server (localhost). Due to browser security restrictions, it may not load directly in the preview frame.",
+    localServerBtn: "Attempt to Load Preview",
+    broadcastAlert: "Broadcast Alert",
+    pestDetectTitle: "Instant Pest Detection",
+    pestDetectDesc: "Use AI to identify pests from images before sending alerts.",
+    detecting: "Detecting...",
+    analyzeImage: "Analyze Image",
+    pestDetected: "Pest Detected!",
+    confidenceScore: "Confidence Score",
+
+    // Chat
+    chatTitle: "Agri Assistant",
+    online: "Online",
+    agriRag: "Agri-RAG Docs",
+    clearChat: "Clear Chat",
+    typeMsg: "Type your question...",
+    suggested: "Suggested Topics",
+    tip: "Daily Farming Tip",
+    tipsList: [
+      "Rotate crops to maintain soil health.",
+      "Water early in the morning to reduce evaporation.",
+      "Test your soil pH every season.",
+      "Mulching helps retain soil moisture.",
+      "Use organic compost for better yield."
+    ],
+
+    // Weather Station
+    weatherStationTitle: "Smart Weather Station",
+    weatherStationDesc: "Hyper-local weather data for precision farming.",
+    launchWeather: "Launch Weather Station",
+    loadingWeather: "Loading Weather Station...",
+
+    // Tour
+    takeTour: "Take App Tour",
+    tourNext: "Next",
+    tourBack: "Back",
+    tourFinish: "Finish",
+    tourStep1Title: "Language Selection",
+    tourStep1Desc: "Choose your preferred language here.",
+    tourStep2Title: "Dashboard",
+    tourStep2Desc: "Overview of your farm stats and weather.",
+    tourStep3Title: "Weather Widget",
+    tourStep3Desc: "Check current weather and forecast.",
+    tourStep4Title: "Crop Advisor",
+    tourStep4Desc: "Get AI and ML based crop recommendations.",
+    tourStep5Title: "Fertilizer Advisor",
+    tourStep5Desc: "Calculate optimal nutrients for your crops.",
+    tourStep6Title: "Pest Control",
+    tourStep6Desc: "Diagnose plant diseases using photos.",
+    tourStep7Title: "Pest Alerts",
+    tourStep7Desc: "Monitor outbreaks and send alerts.",
+    tourStep8Title: "Agri Chat",
+    tourStep8Desc: "Ask questions to our AI assistant.",
+    tourStep9Title: "Weather Station",
+    tourStep9Desc: "Access detailed weather analytics.",
+    tourStep10Title: "All Set!",
+    tourStep10Desc: "You are ready to use AgriQNet.",
+  },
+  hi: {
+    dashboard: "डैशबोर्ड",
+    pestAlertsTitle: "वास्तविक समय कीट प्रकोप चेतावनी",
+    pestAlertsDesc: "आपके क्षेत्र में कीट प्रकोप के लिए लाइव निगरानी प्रणाली।",
+    launchPestAlerts: "निगरानी डैशबोर्ड खोलें",
+    loadingPestAlerts: "चेतावनी प्रणाली से जुड़ रहा है...",
+    localServerTitle: "स्थानीय सर्वर कनेक्शन",
+    localServerDesc: "निगरानी डैशबोर्ड स्थानीय सर्वर (localhost) पर होस्ट किया गया है। ब्राउज़र सुरक्षा प्रतिबंधों के कारण, यह सीधे लोड नहीं हो सकता है।",
+    localServerBtn: "पूर्वावलोकन लोड करने का प्रयास करें",
+    broadcastAlert: "चेतावनी प्रसारित करें",
+  },
+  kn: {
+    dashboard: "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
+    pestAlertsTitle: "ನೈಜ-ಸಮಯದ ಕೀಟ ಹರಡುವಿಕೆ ಎಚ್ಚರಿಕೆಗಳು",
+    pestAlertsDesc: "ನಿಮ್ಮ ಪ್ರದೇಶದಲ್ಲಿ ಕೀಟ ಹರಡುವಿಕೆಗಾಗಿ ನೇರ ಮೇಲ್ವಿಚಾರಣಾ ವ್ಯವಸ್ಥೆ.",
+    launchPestAlerts: "ಮೇಲ್ವಿಚಾರಣಾ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ತೆರೆಯಿರಿ",
+    loadingPestAlerts: "ಎಚ್ಚರಿಕೆ ವ್ಯವಸ್ಥೆಗೆ ಸಂಪರ್ಕಿಸಲಾಗುತ್ತಿದೆ...",
+    localServerTitle: "ಸ್ಥಳೀಯ ಸರ್ವರ್ ಸಂಪರ್ಕ",
+    localServerDesc: "ನಿಗಾ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ಸ್ಥಳೀಯ ಸರ್ವರ್ (localhost) ನಲ್ಲಿದೆ. ಬ್ರೌಸರ್ ಸುರಕ್ಷತಾ ಕಾರಣಗಳಿಂದಾಗಿ, ಇದು ನೇರವಾಗಿ ಪೂರ್ವವೀಕ್ಷಣೆಯಲ್ಲಿ ಲೋಡ್ ಆಗದೇ ಇರಬಹುದು.",
+    localServerBtn: "ಪೂರ್ವವೀಕ್ಷಣೆ ಲೋಡ್ ಮಾಡಲು ಪ್ರಯತ್ನಿಸಿ",
+    broadcastAlert: "ಎಚ್ಚರಿಕೆಯನ್ನು ಪ್ರಸಾರ ಮಾಡಿ",
+  },
+  te: {
+    dashboard: "డాష్‌బోర్డ్",
+    pestAlertsTitle: "నిజ-సమయ తెగులు వ్యాప్తి హెచ్చరికలు",
+    pestAlertsDesc: "మీ ప్రాంతంలో తెగులు వ్యాప్తి కోసం ప్రత్యక్ష పర్యవేక్షణ వ్యవస్థ.",
+    launchPestAlerts: "పర్యవేక్షణ డ్యాష్‌బోర్డ్‌ను తెరవండి",
+    loadingPestAlerts: "హెచ్చరిక వ్యవస్థకు కనెక్ట్ అవుతోంది...",
+    localServerTitle: "స్థానిక సర్వర్ కనెక్షన్",
+    localServerDesc: "మానిటరింగ్ డ్యాష్‌బోర్డ్ స్థానిక సర్వర్ (localhost)లో హోస్ట్ చేయబడింది. బ్రౌಸರ್ భద్రతా పరిమితుల కారణంగా, ఇది ప్రివ్యూ ఫ్రేమ్‌లో నేరుగా లోడ్ కాకపోవచ్చు.",
+    localServerBtn: "ప్రివ్యూను లోడ్ చేయడానికి ప్రయత్నించండి",
+    broadcastAlert: "హెచ్చరికను ప్రసారం చేయండి",
+  }
+};
+
+// Helper to fill missing translations with English
+Object.keys(TRANSLATIONS).forEach(key => {
+    if (key === 'en') return;
+    const langKey = key as Language;
+    TRANSLATIONS[langKey] = { ...TRANSLATIONS['en'], ...TRANSLATIONS[langKey] };
+});
+
+export const getTranslation = (lang: Language) => {
+  return TRANSLATIONS[lang] || TRANSLATIONS['en'];
+};

@@ -1,0 +1,9 @@
+{
+  "name": "AgriQNet",
+  "description": "An advanced agricultural advisory system using Gemini AI to provide crop recommendations, pest detection, and smart farming insights.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
