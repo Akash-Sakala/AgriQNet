@@ -272,7 +272,7 @@ const PestAlerts: React.FC<PestAlertsProps> = ({ lang }) => {
         </div>
         
         <a 
-          href="http://localhost:3000/" 
+          href="http://localhost:3001/" 
           target="_blank" 
           rel="noopener noreferrer"
           className="flex items-center gap-2 bg-red-600 text-white px-5 py-2.5 rounded-xl hover:bg-red-700 transition-colors shadow-lg hover:shadow-red-500/30 font-bold shrink-0"

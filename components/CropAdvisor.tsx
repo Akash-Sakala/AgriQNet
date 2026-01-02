@@ -5,6 +5,31 @@ import { Sprout, Droplets, FlaskConical, MapPin, Loader2, CheckCircle, Clock, Tr
 import { GeminiService } from '../services/geminiService';
 import { SoilData, CropRecommendation, Language } from '../types';
 import { getTranslation } from '../utils/translations';
+import appleImg from '../images/apple.jpeg';
+import bananaImg from '../images/banana.jpeg';
+import blackgramImg from '../images/blackgram.jpeg';
+import chickpeaImg from '../images/chickpea.jpeg';
+import coconutImg from '../images/coconut.jpeg';
+import coffeeImg from '../images/coffee.jpeg';
+import cottonImg from '../images/cotton.jpeg';
+import grapesImg from '../images/grapes.jpg';
+import juteImg from '../images/jute.jpeg';
+import kidneybeansImg from '../images/kidneybeans.jpeg';
+import lentilImg from '../images/lentil.jpeg';
+import maizeImg from '../images/maize.jpeg';
+import mangoImg from '../images/mango.jpeg';
+import mothbeansImg from '../images/mothbeans.jpeg';
+import mungbeanImg from '../images/mungbean.jpeg';
+import muskmelonImg from '../images/muskmelon.jpeg';
+import orangeImg from '../images/orange.jpeg';
+import papayaImg from '../images/papaya.jpeg';
+import pigeonpeasImg from '../images/pigeonpeas.jpeg';
+import pomegranateImg from '../images/pomegranate.jpeg';
+import riceImg from '../images/rice.jpeg';
+import watermelonImg from '../images/watermelon.jpeg';
+import wheatImg from '../images/wheat.jpeg';
+import cornImg from '../images/corn.jpeg';
+import sugarcaneImg from '../images/sugarcane.jpeg'
 
 interface CropAdvisorProps {
   lang: Language;
@@ -12,25 +37,40 @@ interface CropAdvisorProps {
 
 // Predefined dictionary for common crops to ensure high-quality, relevant images
 const CROP_IMAGES: Record<string, string> = {
-  'rice': 'https://images.unsplash.com/photo-1536617621572-1d5f1e6269a0?auto=format&fit=crop&w=800&q=80',
-  'wheat': 'https://images.unsplash.com/photo-1501430654243-c934cec2e1c0?auto=format&fit=crop&w=800&q=80',
-  'maize': 'https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=800&q=80',
-  'corn': 'https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=800&q=80',
-  'potato': 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=800&q=80',
-  'tomato': 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=800&q=80',
-  'cotton': 'https://images.unsplash.com/photo-1595123550441-d377e017de6a?auto=format&fit=crop&w=800&q=80',
-  'sugarcane': 'https://images.unsplash.com/photo-1601633596236-4c4c234a9040?auto=format&fit=crop&w=800&q=80',
-  'soybean': 'https://images.unsplash.com/photo-1526346698789-22fd84310124?auto=format&fit=crop&w=800&q=80',
-  'barley': 'https://images.unsplash.com/photo-1518563259397-59c23b3eb981?auto=format&fit=crop&w=800&q=80',
-  'coffee': 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80',
-  'tea': 'https://images.unsplash.com/photo-1558230263-5490726d691e?auto=format&fit=crop&w=800&q=80',
-  'sunflower': 'https://images.unsplash.com/photo-1471193945509-9adadd0974ce?auto=format&fit=crop&w=800&q=80',
-  'carrot': 'https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&fit=crop&w=800&q=80',
-  'onion': 'https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?auto=format&fit=crop&w=800&q=80',
-  'chili': 'https://images.unsplash.com/photo-1588252303782-cb80119abd6d?auto=format&fit=crop&w=800&q=80',
-  'banana': 'https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=800&q=80',
-  'apple': 'https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=800&q=80',
-  'grape': 'https://images.unsplash.com/photo-1537640538965-1756fb9880bb?auto=format&fit=crop&w=800&q=80',
+  'wheat': wheatImg,
+  'corn': cornImg,
+  // 'potato': 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=800&q=80',
+  // 'tomato': 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=800&q=80',
+  'sugarcane': sugarcaneImg,
+  // 'soybean': 'https://images.unsplash.com/photo-1526346698789-22fd84310124?auto=format&fit=crop&w=800&q=80',
+  // 'barley': 'https://images.unsplash.com/photo-1518563259397-59c23b3eb981?auto=format&fit=crop&w=800&q=80',
+  // 'tea': 'https://images.unsplash.com/photo-1558230263-5490726d691e?auto=format&fit=crop&w=800&q=80',
+  // 'sunflower': 'https://images.unsplash.com/photo-1471193945509-9adadd0974ce?auto=format&fit=crop&w=800&q=80',
+  // 'carrot': 'https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&fit=crop&w=800&q=80',
+  // 'onion': 'https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?auto=format&fit=crop&w=800&q=80',
+  // 'chilli': 'https://images.unsplash.com/photo-1588252303782-cb80119abd6d?auto=format&fit=crop&w=800&q=80',
+  'maize': maizeImg,
+  'apple': appleImg,
+  'banana': bananaImg,
+  'blackgram': blackgramImg,
+  'chickpea': chickpeaImg,
+  'coconut': coconutImg,
+  'coffee': coffeeImg,
+  'cotton': cottonImg,
+  'grapes': grapesImg,
+  'jute': juteImg,
+  'kidneybeans': kidneybeansImg,
+  'lentil': lentilImg,
+  'mango': mangoImg,
+  'mothbeans': mothbeansImg,
+  'mungbean': mungbeanImg,
+  'muskmelon': muskmelonImg,
+  'orange': orangeImg,
+  'papaya': papayaImg,
+  'pigeonpeas': pigeonpeasImg,
+  'pomegranate': pomegranateImg,
+  'rice': riceImg,
+  'watermelon': watermelonImg,
 };
 
 const STORAGE_KEY = 'agriqnet_crop_advisor';
@@ -95,30 +135,85 @@ const CropAdvisor: React.FC<CropAdvisorProps> = ({ lang }) => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify({ recommendations, soilData, genAIParams }));
   }, [recommendations, soilData, genAIParams]);
 
-  const handleRecommend = async () => {
-    setLoading(true);
-    try {
-      // For GenAI, we pass the simplified params + current date
-      const currentDate = new Date().toLocaleDateString(lang === 'en' ? 'en-US' : 'en-IN', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
+  // const handleRecommend = async () => {
+  //   setLoading(true);
+  //   try {
+  //     // For GenAI, we pass the simplified params + current date
+  //     const currentDate = new Date().toLocaleDateString(lang === 'en' ? 'en-US' : 'en-IN', {
+  //       weekday: 'long',
+  //       year: 'numeric',
+  //       month: 'long',
+  //       day: 'numeric'
+  //     });
       
-      const payload = {
-        ...genAIParams,
-        date: currentDate
-      };
+  //     const payload = {
+  //       ...genAIParams,
+  //       date: currentDate
+  //     };
 
-      const results = await GeminiService.recommendCrops(payload, lang);
-      setRecommendations(results);
-    } catch (err) {
-      alert("Failed to get recommendations. Check API Key.");
-    } finally {
-      setLoading(false);
-    }
-  };
+  //     const results = await GeminiService.recommendCrops(payload, lang);
+  //     setRecommendations(results);
+  //   } catch (err) {
+  //     alert("Failed to get recommendations. Check API Key.");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+  const handleRecommend = async () => {
+  setLoading(true);
+  try {
+    const currentDate = new Date();
+    const dateString = currentDate.toLocaleDateString(lang === 'en' ? 'en-US' : 'en-IN', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric'
+    });
+
+    // Detailed prompt construction
+    const prompt = `
+      CONTEXT:
+      - Location: ${genAIParams.location}
+      - Current Date: ${dateString}
+      - Soil: ${genAIParams.soilType}
+      - Water: ${genAIParams.waterSource}
+      - Farm Size: ${genAIParams.fieldSize}
+      - Preferred Language: ${lang}
+
+      INSTRUCTIONS:
+      1. Analyze the agro-climatic zone of ${genAIParams.location}. Identify typical historical crops and current market demand in this specific region.
+      2. Factor in the current season (e.g., Kharif, Rabi, or Zaid in India) based on the date: ${dateString}.
+      3. Filter these crops based on the user's ${genAIParams.soilType} and ${genAIParams.waterSource}.
+      4. Provide 4-5 high-probability recommendations.
+
+      OUTPUT FORMAT:
+      Return ONLY a JSON array. Translate all values (except JSON keys) to the language: ${lang}.
+      Structure:
+      [{
+        "name": "string",
+        "scientificName": "string",
+        "confidence": number,
+        "description": "Why this works for ${genAIParams.location} in this season",
+        "growthPeriod": "string",
+        "yieldPotential": "string",
+        "economicAnalysis": "Market demand and price trends for this region",
+        "requirements": {
+          "water": "string",
+          "sun": "string",
+          "soil": "string"
+        }
+      }]
+    `;
+
+    const results = await GeminiService.recommendCrops(prompt, lang);
+    setRecommendations(results);
+  } catch (err) {
+    console.error(err);
+    alert("Recommendation failed.");
+  } finally {
+    setLoading(false);
+  }
+};
 
   const handleMLPredict = async () => {
     setLoading(true);
